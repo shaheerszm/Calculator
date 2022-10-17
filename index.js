@@ -4,7 +4,7 @@ class Calculator {
   value;
 
   constructor(){
-    this.value = 0;
+    this.value = 0.0;
     this.operation = null;
   }
 
@@ -39,5 +39,33 @@ class Calculator {
   }
 }
 
+let calc = new Calculator();
+const btns = document.querySelectorAll('button');
+const display = document.getElementsByClassName("display");
 
+for (let item of btns) {
+  if (item.classList.contains("oper")) {
+    item.addEventListener("click", clickOper);
+  }
+  else if (item.classList.contains("options")) {
+    item.addEventListener("click", clickOption);
+  }
+  else {
+  item.addEventListener('click', clickNum);
+  }
+}
 
+function clickOper(e) {
+  let oper = e.target.value;
+  calc.oper(oper);
+  document.querySelectorAll('.display').innerText = calc.value;
+}
+function clickOption(e) {
+  let opt = e.target.value;
+
+}
+function clickNum(e) {
+  let val = e.target.value;
+  calc.update(val)
+  display.textContent = calc.value;
+}

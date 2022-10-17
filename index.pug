@@ -5,39 +5,38 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title A very useful calculator
-    script(src="index.js")
-    link(rel="stylesheet", href="style.css")
+    link(rel="stylesheet", href="style.css", type="text/css")
   body
     div(class="container")
       div(class="display") 0
       div(class="row")
-        button(type="button", value="AC") AC
-        button(type="button", value="+/-") +/-
-        button(type="button", value="Delete") Delete
+        button(type="button", value="Clear", class="option") Clear
+        button(type="button", value="+/-", class="option") +/-
+        button(type="button", value="Delete", class="option") Delete
       div(class="row")
         button(type="button", value="7") 7
         button(type="button", value="8") 8
         button(type="button", value="9") 9
-        button(type="button", value="divide") /
+        button(type="button", value="divide", class="oper") /
       div(class="row")
         button(type="button", value="4") 4
         button(type="button", value="5") 5
         button(type="button", value="6") 6
-        button(type="button", value="multiply") x
+        button(type="button", value="multiply", class="oper") x
       div(class="row")
-        button(type="button", value="7") 3
-        button(type="button", value="8") 2
-        button(type="button", value="9") 1
-        button(type="button", value="sub") -
+        button(type="button", value="3") 3
+        button(type="button", value="2") 2
+        button(type="button", value="1") 1
+        button(type="button", value="sub", class="oper") -
       div(class="row")
-        button(type="button", value="7") 0
-        button(type="button", value="8") .
-        button(type="button", value="9") =
-        button(type="button", value="add") +
-        
+        button(type="button", value="0") 0
+        button(type="button", value="dot", class="option") .
+        button(type="button", value="equals", class="oper") =
+        button(type="button", value="add", class="oper") +
     div(class="footer")
       span Copyright Shaheer Amjad © 2022 |
       a(href="https://github.com/shaheerszm") Github
+    script(src="index.js")
 
 
 
