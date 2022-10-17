@@ -40,20 +40,29 @@ class Calculator {
 }
 
 let calc = new Calculator();
+let dispVal = calc.value;
 const btns = document.querySelectorAll('button');
-const display = document.getElementsByClassName("display");
+const display = document.getElementsByClassName("display")[0];
 
 for (let item of btns) {
   if (item.classList.contains("oper")) {
     item.addEventListener("click", clickOper);
   }
-  else if (item.classList.contains("options")) {
+  else if (item.classList.contains("option")) {
     item.addEventListener("click", clickOption);
   }
   else {
   item.addEventListener('click', clickNum);
   }
 }
+
+function clickNum(e) {
+  let val = e.target.value;
+  dispVal *= 10;
+  dispVal += Number(val)
+  display.textContent = dispVal;
+}
+
 
 function clickOper(e) {
   let oper = e.target.value;
@@ -62,10 +71,5 @@ function clickOper(e) {
 }
 function clickOption(e) {
   let opt = e.target.value;
-
-}
-function clickNum(e) {
-  let val = e.target.value;
-  calc.update(val)
-  display.textContent = calc.value;
+  console.log(opt)
 }
